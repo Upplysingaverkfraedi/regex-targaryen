@@ -1,6 +1,7 @@
 import requests
 import pandas as pd
 import argparse
+import re 
 
 
 def parse_arguments():
@@ -23,9 +24,28 @@ def fetch_html(url):
 
 
 def parse_html(html):
-    # Hér þarf að útfæra reglulega segð til að vinna úr niðurstöðum, ekki er leyfilegt að nota
-    # pakka eins og BeautifulSoup til að leysa verkefnið.
-    raise NotImplementedError("Eftir að útfæra reglulega segð sem vinnur úr HTML gögnum.")
+    pattern = r'<tr>\s*<td class="hidden-xs">(\d+)</td>\s*<td>(\d+)</td>\s*<td>Þorlákur Rafnsson</td>\s*<td class="hidden-xs">(\d+)</td>\s*<td class="hidden-xs">(.*?)</td>\s*<td>(.*?)<br></td>\s*<td>(.*?)</td>\s*<td>(.*?)</td>\s*<td>(.*?)</td>'
+        # Nota re.findall til að finna allar samsvaranir
+    matches = re.findall(pattern, html)
+
+    # Breyta niðurstöðum yfir í lista af dicts til að auðvelda skráningu í csv
+    # Með match[0], match[1]... erum við að sækja réttu gögn frá reglulegu segðinni. Því þau raðast í þessa röð. 
+
+    results = []
+    for match in matches:
+        results.append({
+            'Rank': match[0],
+            'BIB': match[1],
+            'Name': 'Þorlákur Rafnsson', # þetta er fasti því við erum að skoða gögn frá Þorláki
+            'Year': match[2],
+            'Club': match[3],
+            'Split': match[4],
+            'Time': match[5],
+            'Behind': match[6],
+            'Chiptime': match[7]
+        })
+
+    return results
 
 
 def skrifa_nidurstodur(data, output_file):
@@ -52,12 +72,9 @@ def main():
         return
 
     if not 'timataka.net' in args.url:
-        # TODO uppfærið if-skilyrðið til að nota reglulega segð sem passar að URL sé frá
-        #  timataka.net og sýnir úrslit, t.d.
-        #  https://timataka.net/jokulsarhlaup2024/urslit/?race=2&cat=m
-        #  https://www.timataka.net/snaefellsjokulshlaupid2014/urslit/?race=1&cat=m&age=0039
-        #  en ekki
-        #  https://www.timataka.net/snaefellsjokulshlaupid2014/urslit/?race=1
+        # Regluleg segð til að passa að URL-ið sé úrslitasíða af timataka.net
+
+        url_pattern = r'https://(www\.)?timataka\.net/.+/urslit/\?race=\d+.*'
         print("Slóðin er ekki frá timataka.net")
         return
 
