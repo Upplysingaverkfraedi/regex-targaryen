@@ -20,7 +20,6 @@ Hérna er útskýringin á segðinni
     {1,63}: Domainið getur innihaldið 1-63 stafi samkvæmt standard emaili
     \.: Setur punkt þarna á milli (t.d hi.is)
     [a-zA-Z]{2,6}: Leyfir bara stóra og litla bókstafi og passar að það séu 2-6 stafir. 
-    
-    (?: ..): Þetta er optional eins og email getur verið xx@hi.is eða xx@explorer.co.uk
+     (?: ..): Þetta er optional eins og email getur verið xx@hi.is eða xx@explorer.co.uk
 
 *Hægt er að finna kóðann undir regex_email2.py*
