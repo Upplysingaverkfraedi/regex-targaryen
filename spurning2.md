@@ -1,7 +1,7 @@
 
 
 ## 2. Leita að netfangi
-E-mail geta verið af ýmsum gerðum, en oftast eru þau skilgreind með eftirfarandi sniði: <local-part>@<domain>.<top-level-domain> Skilgreining á löglegu netfangi gefið í RFC 5322 en Wikipedia gefur gagnleg dæmi um hvað má og má ekki.
+E-mail geta verið af ýmsum gerðum, en oftast eru þau skilgreind með eftirfarandi sniði: local-part@domain.top-level-domain. Skilgreining á löglegu netfangi gefið í RFC 5322 en Wikipedia gefur gagnleg dæmi um hvað má og má ekki.
 
 Að útbúa regluleg segð sem getur fundið öll lögleg netföng er talsvert flókið, en við skulum einskorða okkur við tiltölulega algeng snið.
 
