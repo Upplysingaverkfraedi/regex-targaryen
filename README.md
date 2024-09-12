@@ -1,23 +1,19 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/CMNHJo7M)
+
+# Uppfært README
+
+í spurningu 4 þarf að setja **.html** einhvers staðar í .gitignore skránna og vista
+og keyra svo með python3 code/timataka.py --url "https://timataka.net/hledsluhlaupid2024/urslit/?race=2&cat=m&age_from=19&age_to=29" --output data/hledsluhlaup24.csv --debug
+
+mögulega þarf að installa nokkrum pökkum 
+
+```bash
+pip3 install pandas
+pip3 install requests
+```
 # Reglulegar segðir (Regular Expressions)
 
 ## Leiðbeiningar
-
-- **Öll svör verða að vera rökstudd með skýrri röksemdafærslu.** Ekki verður veitt stig fyrir 
-  svör án rökstuðnings.
-- **Tryggið skýrleika og skipulag í uppsetningu.** Þið megið nota verkfæri eins og iPad fyrir 
-  útreikninga þar sem það á við. Hlaðið svo upp PDF útgáfu af lausninni ykkar.
-- Þetta er hópverkefni, sem fer fram hér. **Notið PR til að fara yfir lausnir hvers annars.** 
-  Mikilvægt er að allir séu virkir þátttakendur í sérhverju undirverkefni. 
-  - Tveir teymismeðlimir þurfa að samþykkja breytingar frá öðrum áður en þær eru samþykktar. 
-  - Ekki samþykkja án þess að skilja innihald breytinganna, ef um er að ræða kóða þarf að tékka 
-    kóðann út og prófa keyra kóðann sjálf/ur.
-  - Verið óhrædd að óska eftir frekari útskýringum ef eitthvað er óskýrt.
-- Það fylgja kóða beinagrindur í **Python** með hverju verkefni. Það sem á eftir að úfæra er merkt 
-  með `TODO` athugasemdum. Eða það er tímabundinn `NotImplementedError` á stöðum sem þarf að 
-  útfæra nýja virkni.  
-- **Óskýr uppsetning hefur áhrif á stigagjöf verkefnisins.**
-- Gangi ykkur vel!
 
 ## Verkefni
 
@@ -86,6 +82,7 @@ python3 code/regex_kt.py --file data/kt.txt --fyrirtaeki
 python3 code/regex_kt.py --file data/kt.txt --fyrirtaeki --einstaklingar
 ```
 
+
 ### 2. Leita af netfangi
 
 E-mail geta verið af ýmsum gerðum, en oftast eru þau skilgreind með eftirfarandi sniði:
@@ -124,6 +121,7 @@ skelinni:
 ```bash
 python3 code/regex_email.py --file data/email.txt
 ```
+
 
 ### 3. Endurraða skrá
 Við höfum skránna [data/nafn_heimilisfang_simanumer.csv](data/nafn_heimilisfang_simanumer.csv) sem hefur nöfn (eiginnafn millinafn 
