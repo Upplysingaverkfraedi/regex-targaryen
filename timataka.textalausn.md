@@ -38,6 +38,17 @@ Við síðan endurtökum þessa segð tvisvar sinnum til að sækja Behind og Ch
 (\d+): Fangar eina eða fleiri tölur. Þegar þetta er notað, mun það skila tölum úr samsvarandi hluta HTML-töflunnar.
 (.*?): Grípur hvaða texta sem er, en með ? verður það „lazy“, sem þýðir að það mun stöðvast eins fljótt og mögulegt er (það mun ekki fanga meira en nauðsynlegt er).
 
+Einnig útfærðum við reglulega segð sem passar að URL sé frá tímataka.net og sýnir úrslit:
+https://(www\.)?timataka\.net/.+/urslit/\?race=\d+.*
+
+Brjótum hana aðeins niður: 
+
+- https://(www\.)?: Þetta passar við URL sem byrjar á https:// og getur innihaldið www. en það þarf þess ekki (það er táknað með ?).
+- timataka\.net: Passar nákvæmlega við lén timataka.net. 
+/.+/urslit/: Passar við hvaða sem er (t.d. nafnið á keppninni eða hlaupinu) sem endar á /urslit/ sem vísar á úrslita síðuna.
+\?race=\d+: Passar við fyrirspurnina í URL-inu sem inniheldur ?race= ásamt einum eða fleiri tölustöfum (\d+).
+.*: Passar við allt sem kemur eftir það, sem þýðir að það er ekki sérstök krafa um hvað kemur á eftir þessu. 
+
 
 Eftir að hafa keyrt forritið okkar með skipuninni python3 code/timataka.py --url "https://timataka.net/hledsluhlaupid2024/urslit/?race=2&cat=m&age_from=19&age_to=29" --output data/hledsluhlaup24.csv --debug varð til skrá með eftirfarandi upplýsingum: 
 
