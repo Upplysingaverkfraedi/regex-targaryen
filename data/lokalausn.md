@@ -91,6 +91,9 @@ Plús "+" Passar við fyrri táknið á milli eins og ótakmarkaðs tíma, eins 
 Punktur "." passar við hvaða staf sem er (nema fyrir línulok). 
 Plús "+" passar við fyrri táknið á milli eins og ótakmarkaðs tíma, eins oft og mögulegt er og gefur til baka eftir þörfum. 
 
+Keyra forritið regex_recorder.py með skipuninni 
+python3 code/regex_reorder.py --infile data/nafn_heimilisfang_simanumer.csv --outfile data/heimilisfang_simanumer_nafn.tsv
+og þá kemur ný skrá skv. leiðbeiningum
 
 ## 4. Gagnaúrvinnsla
 
